@@ -1,8 +1,12 @@
 //variavel com os numeros para a array
-var numar = Number(document.getElementById('numar').value)
+var numar = document.getElementById('numar')
 var lista = document.getElementById('list')
-var numlista = []
+var numlista = new Array(99)
 function addLista(){
-    numlista = numlista.push(numar)
-       lista.innerHTML =  `o número inserido foi ${numlista}`
+    if(numar.value.length == 0){
+        alert('[ERRO] Verifique os valores e tente novamente')
+    }
+    let item = document.createElement('option')
+    item.text = `O número adicionado foi: ${Number(numar.value)}`
+    lista.appendChild(item)
 }
